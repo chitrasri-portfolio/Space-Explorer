@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b1b" />
+  <title>Space Explorer | Journey Through the Solar System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-icon">✦</span><span>SPACE<span class="accent">EXPLORER</span></span></a>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#planets" class="nav-link">Planets</a>
+      <a href="#facts" class="nav-link">Space facts</a>
+      <a href="#quiz" class="nav-link">Quiz</a>
+    </nav>
+    <button class="sound-btn" id="soundToggle" title="Toggle ambient sound">♫ <span>Sound off</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR UNIVERSE IS WAITING</div>
+        <h1>Explore the<br/><span class="gradient-text">infinite.</span></h1>
+        <p class="hero-desc">A little curiosity can take you light-years away. Discover our solar system, meet the planets, and test your cosmic knowledge.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#planets">Start exploring <span>↗</span></a>
+          <a class="secondary-btn" href="#quiz">Take the quiz <span>→</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>8</strong><span>PLANETS</span></div>
+          <div><strong>1</strong><span>STAR SYSTEM</span></div>
+          <div><strong>∞</strong><span>WONDER</span></div>
+        </div>
+      </div>
+      <div class="solar-art" aria-label="Illustration of the solar system">
+        <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div>
+        <div class="sun"></div>
+        <div class="planet p-mercury" title="Mercury"></div>
+        <div class="planet p-venus" title="Venus"></div>
+        <div class="planet p-earth" title="Earth"><span></span></div>
+        <div class="planet p-mars" title="Mars"></div>
+        <div class="planet p-jupiter" title="Jupiter"></div>
+        <div class="planet p-saturn" title="Saturn"><i></i></div>
+        <div class="planet p-uranus" title="Uranus"></div>
+        <div class="planet p-neptune" title="Neptune"></div>
+        <div class="art-label label-sun">THE SUN <span>Our star</span></div>
+        <div class="art-label label-earth">EARTH <span>Our home</span></div>
+      </div>
+      <a href="#planets" class="scroll-hint">SCROLL TO DISCOVER <span>↓</span></a>
+    </section>
+
+    <section class="section planets-section" id="planets">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE NEIGHBOURHOOD</div><h2>Meet the <span class="gradient-text">planets.</span></h2></div>
+        <p>Eight worlds, each with its own story.<br/>Choose a planet to begin your journey.</p>
+      </div>
+      <div class="planet-grid" id="planetGrid"></div>
+      <div class="detail-panel" id="planetDetail" aria-live="polite">
+        <div class="detail-orb" id="detailOrb"><span></span></div>
+        <div class="detail-copy">
+          <div class="eyebrow">PLANET DOSSIER</div>
+          <h3 id="detailName">Earth</h3>
+          <p id="detailDescription">Our pale blue home.</p>
+          <div class="detail-stats" id="detailStats"></div>
+        </div>
+        <div class="detail-fact"><span class="fact-star">✦</span><span class="mini-label">DID YOU KNOW?</span><p id="detailFact"></p></div>
+      </div>
+    </section>
+
+    <section class="section facts-section" id="facts">
+      <div class="section-heading">
+        <div><div class="eyebrow">COSMIC CURIOSITIES</div><h2>Space is <span class="gradient-text">wild.</span></h2></div>
+        <button class="secondary-btn" id="newFact">Another fact ↻</button>
+      </div>
+      <div class="fact-feature">
+        <div class="fact-number">0<span id="factIndex">1</span></div>
+        <div class="fact-feature-copy"><span class="mini-label">SPACE FACT</span><h3 id="bigFact">Sunlight takes about 8 minutes and 20 seconds to reach Earth.</h3><p>Keep looking up. There's always something new to discover.</p></div>
+        <div class="constellation">✦　·　✧<br/>　·　✦　·<br/>✧　　·　✦</div>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="quiz-card">
+        <div class="quiz-intro"><div class="eyebrow">MISSION CONTROL</div><h2>How cosmic is<br/><span class="gradient-text">your knowledge?</span></h2><p>Take the quick quiz and see if you're ready for your next space mission.</p><div class="quiz-decoration">✦</div></div>
+        <div class="quiz-play" id="quizPlay">
+          <div class="quiz-topline"><span id="quizProgress">QUESTION 01 / 05</span><span id="quizScore">SCORE 0</span></div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <h3 id="questionText">Which is the largest planet in our solar system?</h3>
+          <div class="answers" id="answers"></div>
+          <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+          <button class="primary-btn quiz-next" id="quizNext" disabled>Next question <span>→</span></button>
+        </div>
+      </div>
+    </section>
+    <section class="closing">
+      <div class="closing-star">✦</div><h2>The universe is yours<br/>to <span class="gradient-text">wonder about.</span></h2>
+      <a href="#home" class="secondary-btn">Back to the top ↑</a>
+    </section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-icon">✦</span><span>SPACE<span class="accent">EXPLORER</span></span></a><span>Made for curious minds · College Space Science Expo</span><span class="footer-right">LOOK UP. DREAM BIG. ✧</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
